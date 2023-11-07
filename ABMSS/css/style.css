@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+section .loader_bg{
+  position: fixed;
+  z-index: 999999;
+  background: #fff;
+  width: 100%;
+  height: 100px;
+}
+
+section .loader{
+  border: 0 solid transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 15px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+}
+
+section .loader:before, .loader:after{
+  content: '';
+  border: 1em solid #ff5733;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}   
+
+section .loader:before{
+  animation-delay: .5s;
+}
+
+@keyframes loader {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 0;
+  }
+  
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+section .imgBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+section .imgBx::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background: linear-gradient(225deg, #121212, gray);*/
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+section .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section .contentBx {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+section .contentBx .formBx {
+  width: 50%;
+}
+section .contentBx .formBx .logo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.contentBx .formBx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section .contentBx .formBx h2 {
+  color: #121212;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #d41f2d;
+  letter-spacing: 1px;
+  align-items: center;
+}
+
+section .contentBx .formBx .inputBx {
+  margin-bottom: 20px;
+}
+
+section .contentBx .formBx .inputBx span {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: #121212;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+section .contentBx .formBx .inputBx input {
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #d41f2d;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #121212;
+  background: transparent;
+  border-radius: 5px;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"] {
+  background: #fcffe7;
+  color: #121212;
+  border: 1px solid;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]:hover {
+  background: #d41f2d;
+}
+
+section .contentBx .formBx .remember {
+  margin-bottom: 10px;
+  color: #121212;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.inputBx {
+  position: relative;
+  width: 100%;
+}
+
+input:invalid {
+  border: 1px solid blue;
+}
+
+.togglePassword {
+  position: absolute;
+  top: 60%;
+  right: 15px; /* Adjust this value as needed to fine-tune the position */
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.error {
+  background: #f2dede;
+  color: #a94442;
+  padding: 10px;
+  width: 95%;
+  border-radius: 5px;
+  margin: 15px auto;
+}
+
+@media (max-width: 768px) {
+  section .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  section .contentBx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  section .contentBx .formBx {
+    width: 100%;
+    padding: 40px;
+    background: rgba(255 255 255 / 0.9);
+    margin: 50px;
+  }
+}
+
+/*This is for loading screen*/
+section .loader_bg{
+    position: fixed;
+    z-index: 999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+section .loader_bg .loader{
+    border: 0 soild transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+section .loader:before, section .loader:after{
+    content: '';
+    border: 1em solid #ff5733;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.loader_bg{
+  position: fixed;
+  z-index: 999999;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+}
+.loader{
+  border: 0 soild transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+  content: '';
+  border: 1em solid #ff5733;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+.loader:before{
+  animation-delay: .5s;
+}
+@keyframes loader{
+  0%{
+      transform: scale(0);
+      opacity: 0;
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      transform: scale(1);
+      opacity: 0;
+  }
+}
+
